@@ -1,0 +1,50 @@
+{
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+    },
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint",
+      "react",
+      "react-hooks",
+      "prettier"
+    ],
+    "extends": [
+      "plugin:@typescript-eslint/recommended",
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "airbnb",
+      "airbnb-typescript",
+      "plugin:prettier/recommended",
+      "prettier"
+    ],
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 2022,
+      "sourceType": "module",
+      "project": "tsconfig.json"
+    },
+    "rules": {
+        //https://itnext.io/7-recommended-eslint-rules-for-react-typescript-project-1a22b011b4b5 참고
+        "arrow-body-style": ["error", "as-needed"],
+        "react/self-closing-comp": ["error", {"component": true, "html": true}],
+        "@typescript-eslint/consistent-type-imports": [ "error",{"prefer":"type-imports"}],
+        "react-hooks/exhaustive-deps": "error",
+        "linebreak-style": 0, // OS 별로 다른 방식의 줄바꿈 설정
+        "import/extensions": 0, // 파일 확장자 명시
+        "react/react-in-jsx-scope": 0 // import React 안해도 됨
+    }, 
+    "globals": {
+      "React": "writable"
+    }
+  }
